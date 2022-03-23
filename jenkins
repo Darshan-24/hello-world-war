@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('checkout') { 
+            steps {
+              sh "https://github.com/Darshan-24/hello-world-war/new/master"
+            }
+        }
+stage('build') { 
+            steps {
+              sh "mvn clean package"
+            }
+        }        
+    }
+}
