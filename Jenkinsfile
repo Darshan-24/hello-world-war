@@ -16,5 +16,4 @@ stage('build') {
           sh "cp /var/lib/jenkins/workspace/firstpipelinejob/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.60/webapps/"
             }
         }
-}
-}
+
