@@ -4,7 +4,7 @@ pipeline{
       stage('check out'){
                   steps{
                   sh "rm -rf hello-world-war"
-                  sh "git clone https://github.com/Dayanandachari/hello-world-war.git"
+                  sh "git clone https://github.com/Darshan-24/hello-world-war.git"
                   }
                   }
       stage('build'){
@@ -12,22 +12,22 @@ pipeline{
       sh "pwd"
       sh "ls"
       sh "cd hello-world-war"
-      sh "docker build -t dayanand1991/docwarimage:1.0 ."
+      sh "docker build -t darshansk94/docwarimage:1.0 ."
       }
       }
        stage('publish'){
                   steps{
-                        sh "docker login -u dayananda1991 -p admin@123"
-                        sh "docker push dayananda1991/docwarimage:1.0"
+                        sh "docker login -u darshansk94 -p admin@123"
+                        sh "docker push darshansk94/docwarimage:1.0"
                   }
             }
             stage('deploy'){
                   agent { label 'slave1' }
                   steps{
-                        sh "docker login -u dayananda1991 -p admin@123"
-                        sh "docker pull dayananda1991/docwarimage:1.0"
+                        sh "docker login -u darshansk94 -p admin@123"
+                        sh "docker pull darshansk94/docwarimage:1.0"
                        //sh "docker rm -f trail1"
-                        sh "docker run -d -p 8085:8080 --name trail1 dayananda1991/docwarimage:1.00"
+                        sh "docker run -d -p 8085:8080 --name trail1 darshansk94/docwarimage:1.00"
                   }
             }
       }
