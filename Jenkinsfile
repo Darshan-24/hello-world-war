@@ -33,7 +33,7 @@ pipeline{
                         sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
                         sh "docker pull darshansk94/docker_repo_1991:${BUILD_NUMBER}"
                         sh "docker rm -f trail1"
-                        sh "docker run -d -p 8085:8080 --name trail1 darshansk94/docker_repo_1991:${BUILD_NUMBER}"
+                        sh "docker run -d -p 8091:8080 --name trail1 darshansk94/docker_repo_1991:${BUILD_NUMBER}"
                   }
             }
       }
